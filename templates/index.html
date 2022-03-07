@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head style=background-image:url("../mars_surface.jpg");>
+  <head>
     <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -10,7 +10,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
   </head>
-  <body class="bg-dark">
+  <body style="background-color: bisque; color: black;">
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
@@ -60,15 +60,14 @@
       <div class="row" id="mars-hemispheres">
         <div class="col-md-8">
           <h2 class="text-center">Mars Hemispheres</h2>
-        {% for hemisphere in mars.hemispheres %}
-          <div class="col-md-4">
+        {% for hemispheres in mars.hemispheres %}
+          
            <div class="img-thumbnail">
-             <img src="{{hemisphere_img_urls}}">
-             
-               <h3>{{hemisphere.title}}</h3>
+            <img src="{{hemispheres.img_url}}">
+               <h3>{{hemispheres.titles}}</h3>
             </div>
-          </div>
-          {% endfor %}
+          
+        {% endfor %}
       </div>
       </div>
     </div>
