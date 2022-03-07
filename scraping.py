@@ -19,7 +19,7 @@ def scrape_all():
         'news_paragraph' : news_paragraph,
         'featured_image' : featured_image(browser),
         'facts' : mars_facts(),
-        'mars_hemispheres': hemispheres(browser), 
+        'hemispheres': hemispheres(browser), 
         'last_modified' : dt.datetime.now(),
         
     }
@@ -138,7 +138,7 @@ def hemispheres(browser):
         img_url_rel = img_soup.find('div', class_='downloads')
         full_url = img_url_rel.find('a')['href']
         #url creation with base, for full resolution image URL string
-        img_url = f'https://marshemispheres.com/{full_url}'
+        img_url = f'https://marshemispheres.com/{full_url}' 
         
         print(hemisphere_titles)
         print(img_url)
@@ -155,6 +155,6 @@ def hemispheres(browser):
 if __name__ == "__main__":
  
  # If running as script, print scraped data
-    print(scrape_all())(debug=True) 
+    print(scrape_all()) 
 
 
